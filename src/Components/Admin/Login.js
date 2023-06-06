@@ -1,7 +1,6 @@
 import React, { useRef } from 'react'
 import { MDBInputGroup} from 'mdb-react-ui-kit';
 import { MDBBtn } from 'mdb-react-ui-kit';
-import log from "../../asset/images/login.jpg"
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 

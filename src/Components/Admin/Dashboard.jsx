@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
@@ -18,10 +18,10 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+// import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Avatar from '@mui/material/Avatar';
 
-import axios from 'axios'
+// import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 import avatar from '../../asset/Avatar/homme-daffaire.png'
 
@@ -112,30 +112,30 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 export default function MiniDrawer() {
-  const [session, setSession] = useState({})
+  // const [session, setSession] = useState({})
   const theme = useTheme();
   const colors = ["#0068B9",'#3df449',"#FEB019"]
   const [open, setOpen] = React.useState(false);
-  const [dashboard, setDashboard] = React.useState('d-none bg-danger ')
-  const [paramettre, setParamettre] = React.useState('d-none')
-  const [compte, setCompte] = React.useState('d-none')
-  const [service, setService] = React.useState({ A: 'd-none bg-danger ', B: 'd-none bg-danger', C: 'd-none bg-danger' })
-  const [data, setData] = useState([]) 
-  const [serviceCount, setServiceCount] =React.useState([]) 
+  // const [dashboard, setDashboard] = React.useState('d-none bg-danger ')
+  // const [paramettre, setParamettre] = React.useState('d-none')
+  // const [compte, setCompte] = React.useState('d-none')
+  // const [service, setService] = React.useState({ A: 'd-none bg-danger ', B: 'd-none bg-danger', C: 'd-none bg-danger' })
+  // const [data, setData] = useState([]) 
+  // const [serviceCount, setServiceCount] =React.useState([]) 
 
   const [nam,setNam] = useState('')
   const [type,setType] = useState('')
   const route = useNavigate('')
 
   useEffect(()=>{
-      if ( JSON.parse(sessionStorage.getItem('user')) !=undefined ){
+      if ( JSON.parse(sessionStorage.getItem('user')) !==undefined ){
           setNam( JSON.parse(sessionStorage.getItem('user'))[0].fullNam)
           setType(JSON.parse(sessionStorage.getItem('user'))[0].Type)
       }else{
           route('/login')
       }
-  },[])
-
+      },[route])
+  
 
   const ListItems = [
     {
@@ -211,10 +211,10 @@ export default function MiniDrawer() {
                   Action
                 </button>  */}
                 <ul className="dropdown-menu">
-                  <li><a className="dropdown-item" href="#">  samir </a></li>
+                  {/* <li><a className="dropdown-item" href="#">  samir </a></li>
                   <li><a className="dropdown-item" href="#">  admin</a></li>
                   <li><hr className="dropdown-divider" /></li>
-                  <li ><a className="dropdown-item" href="#" > Deconnecté </a></li>
+                  <li ><a className="dropdown-item" href="#" > Deconnecté </a></li> */}
                 </ul>
               </div>
 

@@ -25,15 +25,22 @@ function CarouselB() {
     <Carousel activeIndex={index} onSelect={handleSelect}>
        {data.map((slide, i) => {
         return (
-          <Carousel.Item className='h-50' key={i}>        
-        <img
-          className="d-block w-100 img-fluid"
-          src={slide.image}
-          alt="slider image"  
-          style={{ width:'90vw',height:"60vh" }}
-          
+          <Carousel.Item className='h-50' key={i}> 
 
-        />
+            {/* <img 
+            className="d-block w-100 img-fluid"  
+            src={slide.image}  
+            alt="image"  
+            style={{ width:'90vw',height:"60vh" }}
+            /> */}
+            <img
+            className="d-block w-100 img-fluid"
+            src={slide.image}
+            alt="Slider"
+            style={{ width: '90vw', height: '60vh' }}
+          />
+
+          
         <Carousel.Caption>
           <h3>{slide.caption}</h3>
           <p>{slide.description}</p>
