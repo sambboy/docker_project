@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
@@ -22,7 +22,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import Avatar from '@mui/material/Avatar';
 
 // import axios from 'axios'
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import avatar from '../../asset/Avatar/homme-daffaire.png'
 
 
@@ -41,7 +41,7 @@ import AddTaskIcon from '@mui/icons-material/AddTask';
 import PlaylistAddCheckIcon from '@mui/icons-material/PlaylistAddCheck';
 import TaskIcon from '@mui/icons-material/Task';
 
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer} from 'react-toastify';
 
 
 const drawerWidth = 240;
@@ -116,25 +116,25 @@ export default function MiniDrawer() {
   const theme = useTheme();
   const colors = ["#0068B9",'#3df449',"#FEB019"]
   const [open, setOpen] = React.useState(false);
-  // const [dashboard, setDashboard] = React.useState('d-none bg-danger ')
-  // const [paramettre, setParamettre] = React.useState('d-none')
-  // const [compte, setCompte] = React.useState('d-none')
-  // const [service, setService] = React.useState({ A: 'd-none bg-danger ', B: 'd-none bg-danger', C: 'd-none bg-danger' })
-  // const [data, setData] = useState([]) 
-  // const [serviceCount, setServiceCount] =React.useState([]) 
+  const [dashboard] = React.useState('d-none bg-danger ')
+  const [paramettre] = React.useState('d-none')
+  const [compte] = React.useState('d-none')
+  const [service] = React.useState({ A: 'd-none bg-danger ', B: 'd-none bg-danger', C: 'd-none bg-danger' })
+  // const [data] = React.useState([]) 
+  const [serviceCount] =React.useState([]) 
 
-  const [nam,setNam] = useState('')
-  const [type,setType] = useState('')
-  const route = useNavigate('')
+  // const [nam,setNam] =  React.useState('')
+  // const [Type,setType] =  React.useState('')
+  // const route = useNavigate('')
 
-  useEffect(()=>{
-      if ( JSON.parse(sessionStorage.getItem('user')) !==undefined ){
-          setNam( JSON.parse(sessionStorage.getItem('user'))[0].fullNam)
-          setType(JSON.parse(sessionStorage.getItem('user'))[0].Type)
-      }else{
-          route('/login')
-      }
-      },[route])
+  // useEffect(()=>{
+  //     if ( JSON.parse(sessionStorage.getItem('user')) !==undefined ){
+  //         setNam( JSON.parse(sessionStorage.getItem('user'))[0].fullNam)
+  //         setType(JSON.parse(sessionStorage.getItem('user'))[0].Type)
+  //     }else{
+  //         route('/login')
+  //     }
+  //     },[route])
   
 
   const ListItems = [
