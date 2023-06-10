@@ -17,7 +17,7 @@ class ProduitController extends Controller
     }
 
     public function ProductLimit(){
-       $product = DB::table('produits')->skip(10)->take(16)->inRandomOrder()->get();
+       $product = DB::table('produits')->skip(10)->take(4)->inRandomOrder()->get();
        return response()->json(['Produits' => $product]);
 
     }

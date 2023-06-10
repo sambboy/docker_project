@@ -1,4 +1,4 @@
-FROM php:7.2-apache
+FROM php:8.1-apache
 
 # 1. Install development packages and clean up apt cache.
 RUN apt-get update && apt-get install -y \
@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y \
  && rm -rf /var/lib/apt/lists/*
 
 # 2. Apache configs + document root.
-RUN echo "ServerName laravel-app.local" >> /etc/apache2/apache2.conf
+# RUN echo "ServerName laravel-app.local" >> /etc/apache2/apache2.conf
 
 ENV APACHE_DOCUMENT_ROOT=/var/www/html/public
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
@@ -31,15 +31,8 @@ RUN a2enmod rewrite headers
 RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
 
 RUN docker-php-ext-install \
-    bcmath \
-    bz2 \
-    calendar \
-    iconv \
-    intl \
-    mbstring \
-    opcache \
-    pdo_mysql \
-    zip
+    pdo \
+    pdo_mysql
 
 # 5. Composer.
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
@@ -51,3 +44,5 @@ ARG uid
 RUN useradd -G www-data,root -u $uid -d /home/devuser devuser
 RUN mkdir -p /home/devuser/.composer && \
     chown -R devuser:devuser /home/devuser
+
+CMD [ "sh","run.sh" ]
