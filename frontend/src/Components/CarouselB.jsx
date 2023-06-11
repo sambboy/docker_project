@@ -3,12 +3,12 @@ import Carousel from 'react-bootstrap/Carousel';
 function CarouselB() {
     const data = [
         {
-         image:"https://hips.hearstapps.com/hmg-prod/images/best-skincare-products-1656081764.jpg?crop=1.00xw:0.503xh;0,0.279xh&resize=1200:*", 
+         image:"https://edenphone.fr/wp-content/uploads/2020/12/tendances_2020.jpg", 
          caption:"Caption",
          description:"Description Here"
         },
         {
-          image:"https://hips.hearstapps.com/hmg-prod/images/best-skincare-products-1656081764.jpg?crop=1.00xw:0.503xh;0,0.279xh&resize=1200:*", 
+          image:"https://static.vecteezy.com/ti/vecteur-libre/p1/100101-accessoires-de-telephone-gratuit-vectoriel.jpg", 
           caption:"Caption",
           description:"Description Here"
          }

@@ -8,6 +8,8 @@ function HomeProduct({data}) {
             data.map((produit,i)=>{
                 return (
                    <div className='col-4 col-sm-6 col-md-3 my-2'>
+                    <br />
+                    <br />
                      <Card key={i} style={{ width:'23vw',height:"60vh"}} >
                     <Card.Img variant="top" src={produit.img} className='img-fluid' />
                     <Card.Body>
