@@ -20,7 +20,7 @@ class ProduitFactory extends Factory
             "Title" => fake()->name(),
             "Desc"  => fake()->text(),
             "Price"  => fake()->numberBetween(100,600),
-            "img"  => "https://hips.hearstapps.com/hmg-prod/images/best-skincare-products-1656081764.jpg?crop=1.00xw:0.503xh;0,0.279xh&resize=1200:*",
+            "img"  => "https://www.zdnet.com/a/img/resize/b309c0b17aed66661891b83514d214eb341b9774/2022/03/14/462c9ae5-d26f-4274-8f7b-b138e5c4eac7/iphone-se-2022-2.jpg?auto=webp&precrop=4032,2265,x0,y356&width=1280",
             "Categorie_id" => fake()->numberBetween(1,12)
         ];
     }
